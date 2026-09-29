@@ -4,17 +4,17 @@ let raridadeItem = ""
 //etapa 2//
 function DescobrirRaridade(precoItem) {
     if (precoItem >= 1501) {
-        raridadeItem = "Mitico"
+        return "Mitico"
     } else if (precoItem >= 1001) {
-        raridadeItem = "Lendario"
+        return "Lendario"
     } else if (precoItem >= 501) {
-        raridadeItem = "Epico"
+        return "Epico"
     } else if (precoItem >= 301) {
-        raridadeItem = "Raro"
+        return "Raro"
     } else if (precoItem >= 101) {
-        raridadeItem = "Incomum"
+        return "Incomum"
     } else if (precoItem >= 0) {
-        raridadeItem = "Comum"
+        return "Comum"
     }
 }
 console.log(`=== CATALOGO DE RARIDADES ===
@@ -37,7 +37,7 @@ for (let i = 0; i < 5; i++) {
         nomeItem = prompt(`Insira o nome do ${i + 1}º item: `)
     }
     while (isNaN(precoItem) || precoItem <= 0) {
-        precoItem = prompt(`(em robux)Insira o preço do ${i + 1}º item: `)
+        precoItem = parseFloat(prompt(`(em robux)Insira o preço do ${i + 1}º item: `))
     }
     raridadeItem = DescobrirRaridade(precoItem)
     //etapa1
